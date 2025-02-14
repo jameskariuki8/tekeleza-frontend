@@ -1,0 +1,245 @@
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/tekeleza-logo.jpg" type="image/x-icon" />
+    <title>Tekeleza: Empowering Innovators</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+
+
+.navbar {
+            background-color: #007BFF;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 30px;
+            color: white;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 80px;
+            z-index: 1000;
+        }
+
+.logo img {
+    height: 80px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #ffdd57;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: #007BFF;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        width: 200px;
+        text-align: right;
+        padding: 10px;
+    }
+    
+    .nav-links.active {
+        display: flex;
+    }
+    
+    .menu-toggle {
+        display: block;
+    }
+}
+    </style>
+</head>
+
+<body class="bg-gray-100 font-sans text-gray-900">
+
+    <nav class="navbar">
+        <div class="logo">
+            <img src="images/tekeleza-logo-removebg-preview.png" alt="Logo">
+        </div>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="home.html#about-us">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="story.html">Our Story</a></li>
+            <li><a href="#"></a></li>
+        </ul>
+        <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+        </nav>
+        
+        <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const navLinks = document.getElementById('nav-links');
+        
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+        </script>
+
+         <!-- Audio Section -->
+         <div class="mt-24 flex justify-center">
+            <div class="bg-blue-600 text-white p-6 rounded-lg shadow-lg flex flex-col items-center transition-all duration-300 animate-bounce hover:animate-none">
+                <h3 class="text-lg font-semibold mb-3">🎧 Listen to Tekeleza Story</h3>
+                <audio controls class="w-full max-w-xs">
+                    <source src="media/audio.wav" type="audio/mp3">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+        </div>
+        
+    
+        
+    <!-- Story Content Section -->
+    <div id="content" class="container mx-auto p-6 pt-10">
+        <div class="space-y-8">
+            <section class="bg-white shadow rounded-lg overflow-hidden p-6">
+                <h2 class="text-3xl font-bold text-blue-600 mb-4">Introduction</h2>
+                <p class="text-lg leading-relaxed">
+                    In today’s world, innovation is at the heart of progress. Yet, for many aspiring innovators, navigating the
+                    challenging terrain of technological development, resource constraints, and lack of guidance can feel like
+                    an insurmountable obstacle. This is where Tekeleza comes in – a community-based organization (CBO) built with
+                    the purpose of empowering individuals, especially the youth, to transform their ideas into tangible innovations.
+                </p>
+                <p class="text-lg leading-relaxed mt-4">
+                    Our organization is born from the desire to bridge gaps in resources, guidance, and opportunities, and we are
+                    determined to nurture the next generation of innovators. At Tekeleza, we believe in the power of mentorship,
+                    connection, and skill-sharing as essential building blocks for innovation. By fostering an ecosystem where
+                    aspiring innovators can connect with experienced mentors, access resources, and learn from one another, we
+                    aim to ignite a wave of innovation that not only addresses local challenges but also contributes to the global
+                    landscape.
+                </p>
+            </section>
+
+            <section class="bg-white shadow rounded-lg overflow-hidden p-6">
+                <h2 class="text-3xl font-bold text-blue-600 mb-4">The Birth of Tekeleza</h2>
+                <p class="text-lg leading-relaxed">
+                    Tekeleza was born out of a collective desire to address a critical issue within our community: the lack of
+                    accessible mentorship and opportunities for aspiring innovators. Many young, bright minds had ideas but struggled
+                    to find the resources and guidance necessary to turn these ideas into reality. Whether it was limited access to
+                    funding, lack of industry knowledge, or absence of a support network, many potential innovators faced a range
+                    of obstacles that stood between them and their dreams.
+                </p>
+                <p class="text-lg leading-relaxed mt-4">
+                    Our founders recognized that innovation thrives in environments where there is collaboration and access to
+                    expertise. They believed that with the right guidance and the sharing of knowledge, young innovators could
+                    bring forward solutions that not only benefit them but also contribute to the greater good of society. It was
+                    with this vision in mind that Tekeleza was founded. We are not just an organization – we are a community that
+                    is built on the principles of inclusivity, collaboration, and mentorship.
+                </p>
+                <p class="text-lg leading-relaxed mt-4">
+                    Tekeleza’s core mission is simple yet powerful: <strong>to foster innovation through connection and knowledge-sharing.</strong>
+                </p>
+            </section>
+
+            <section id="mentorship" class="bg-white shadow rounded-lg overflow-hidden p-6" >
+                <h2 class="text-3xl font-bold text-blue-600 mb-4">Mentorship: The Heart of Tekeleza’s Success</h2>
+                <p class="text-lg leading-relaxed">
+                    At the core of Tekeleza is our commitment to mentorship. We understand that innovation is not a solitary journey;
+                    it requires guidance, feedback, and support. Mentors play a crucial role in shaping the future of our innovators,
+                    offering not only technical advice but also valuable insights into the challenges that lie ahead.
+                </p>
+                <p class="text-lg leading-relaxed mt-4">
+                    Our mentorship programs connect aspiring innovators with industry experts, experienced entrepreneurs, and seasoned
+                    professionals who are eager to share their knowledge. These mentors offer advice on a range of topics – from
+                    refining business models, navigating the tech landscape, and building scalable solutions, to fostering leadership
+                    skills and developing resilience.
+                </p>
+                <p class="text-lg leading-relaxed mt-4">
+                    The mentorship process is designed to be interactive, supportive, and personalized. We recognize that every
+                    innovator is unique, with different goals and challenges. Therefore, each mentoring relationship is tailored to
+                    meet the individual needs of the mentee, ensuring they receive the guidance and resources most relevant to their
+                    goals.
+                </p>
+            </section>
+
+            <section class="bg-white shadow rounded-lg overflow-hidden p-6" id="connecting innovators">
+                <h2 class="text-3xl font-bold text-blue-600 mb-4">Connecting Innovators: Networking Events and Opportunities</h2>
+                <p class="text-lg leading-relaxed">
+                    In addition to mentorship, Tekeleza provides a platform for networking and collaboration. Innovation does not happen
+                    in isolation – it thrives when there is the exchange of ideas, collaboration, and the ability to learn from others.
+                    Tekeleza understands the power of bringing people together and creating opportunities for them to share ideas, form
+                    partnerships, and access resources that would otherwise be out of reach.
+                </p>
+                <p class="text-lg leading-relaxed mt-4">
+                    Our networking events are designed to connect innovators, entrepreneurs, investors, and professionals from diverse
+                    industries. Whether through meetups, conferences, or online webinars, these events provide a space for individuals
+                    to showcase their work, discuss trends, and build relationships that may lead to new collaborations or opportunities.
+                </p>
+            </section>
+
+            <section class="bg-white shadow rounded-lg overflow-hidden p-6" id="skill sharing">
+                <h2 class="text-3xl font-bold text-blue-600 mb-4">Skill Sharing: A Platform for Growth</h2>
+                <p class="text-lg leading-relaxed">
+                    One of the most important aspects of innovation is the ability to learn new skills and stay updated with the latest
+                    technological trends. In today’s fast-paced world, where technological advancements occur at a rapid rate, it’s crucial
+                    for innovators to constantly adapt and grow. Tekeleza provides a platform for skill-sharing, allowing individuals to
+                    learn from one another and enhance their skill sets.
+                </p>
+                <p class="text-lg leading-relaxed mt-4">
+                    We offer workshops, webinars, and training sessions that cover a wide range of topics – from coding languages,
+                    software development, and digital marketing to leadership, business strategy, and sustainability practices. Our
+                    community members are encouraged to both learn and share their expertise with others. By doing so, we create a culture
+                    of continuous learning where everyone has the opportunity to grow, develop, and contribute to the success of others.
+                </p>
+            </section>
+
+            <section class="bg-white shadow rounded-lg overflow-hidden p-6">
+                <h2 class="text-3xl font-bold text-blue-600 mb-4">Shaping the Future Together</h2>
+                <p class="text-lg leading-relaxed">
+                    As Tekeleza continues to grow, we remain committed to our mission of empowering innovators and fostering collaboration.
+                    We recognize that the challenges we face today – from global health crises to climate change and economic inequality
+                    – require innovative solutions that can only come from diverse, creative minds working together.
+                </p>
+                <p class="text-lg leading-relaxed mt-4">
+                    Tekeleza is more than just an organization; it is a movement that believes in the power of community and shared purpose.
+                    We are committed to transforming lives through technology, mentorship, and the power of collaboration. Our community
+                    is at the forefront of driving change and creating a future where innovation is accessible to all, regardless of
+                    background or resources.
+                </p>
+            </section>
+
+            <section class="bg-white shadow rounded-lg overflow-hidden p-6">
+                <h2 class="text-3xl font-bold text-blue-600 mb-4">Conclusion: A Call to Action</h2>
+                <p class="text-lg leading-relaxed">
+                    Tekeleza is about more than just technological innovation; it’s about creating a culture of support, empowerment, and
+                    collaboration. Our community-based approach ensures that every innovator, regardless of their background, has access
+                    to the tools, knowledge, and connections needed to succeed. We are committed to bridging gaps, fostering connections,
+                    and shaping a future where innovation knows no bounds.
+                </p>
+                <p class="text-lg leading-relaxed mt-4">
+                    Join us at Tekeleza and be part of a movement that is transforming lives and communities through the power of innovation
+                    and shared purpose. Together, we can create opportunities that have the potential to change the world.
+                </p>
+            </section>
+        </div>
+    </div>
+
+</body>
+
