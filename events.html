@@ -4,134 +4,174 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Networking Events - Tekeleza Hub</title>
-    <link rel="stylesheet" href="css/style.css"> <!-- Link to your main CSS -->
+    <link rel="icon" href="images/tekeleza-logo.jpg" type="image/x-icon" />
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* Networking Events Page Styles */
-        .networking-details {
-            padding: 2rem 1rem;
-            background: #fff;
-            color: #333;
-            text-align: center;
-        }
-        
-        .networking-details h2 {
-            font-size: 2.5rem;
-            color: #019d91; /* Tekeleza Red */
-            margin-bottom: 1rem;
-        }
-        
-        .networking-details p {
-            font-size: 1.2rem;
-            color: #666;
-            margin-bottom: 1.5rem;
-        }
-        
-        .networking-details h3 {
-            font-size: 1.8rem;
-            color: #000;
-            margin-top: 2rem;
-        }
-        
-        .event {
-            background-color: #f9f9f9;
-            margin: 1.5rem 0;
-            padding: 1.5rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-        
-        .event h3 {
-            font-size: 2rem;
-            color: #019d91; /* Tekeleza Red */
-        }
-        
-        .event p {
-            font-size: 1rem;
-            color: #555;
-        }
-        
-        .event a.btn {
-            display: inline-block;
-            margin-top: 1rem;
-            background: #019d91; /* Tekeleza Red */
+
+.navbar {
+            background-color:  #019D91;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 30px;
             color: white;
-            padding: 0.75rem 1.5rem;
-            border-radius: 5px;
-            font-size: 1.1rem;
-            cursor: pointer;
-            transition: background 0.3s ease;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 80px;
+            z-index: 1000;
         }
-        
-        .event a.btn:hover {
-            background: #019d91; /* Darker red on hover */
-        }
-        
-        footer {
-            background: #333;
-            color: #fff;
-            text-align: center;
-            padding: 1rem;
-            margin-top: 2rem;
-        }
-        
-        footer p {
-            font-size: 1rem;
-        }</style>
+
+.logo img {
+    height: 80px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #ffdd57;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: #019D91;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        width: 150px;
+        text-align: left;
+        padding: 10px;
+    }
+    
+    .nav-links.active {
+        display: flex;
+    }
+    
+    .menu-toggle {
+        display: block;
+    }
+}
+.event-card {
+        background: white;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease-in-out;
+    }
+    .event-card:hover {
+        transform: translateY(-5px);
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(-20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes slideUp {
+        from { opacity: 0; transform: translateY(30px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .animate-fade-in { animation: fadeIn 1s ease-in-out; }
+    .animate-slide-up { animation: slideUp 1s ease-in-out; }
+    .delay-100 { animation-delay: 0.2s; }
+
+        </style>
 </head>
 <body>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="images/tekeleza-logo-removebg-preview.png" alt="Logo">
+        </div>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#about-us">About Us</a></li>
+            <li><a href="story.html">Our Story</a></li>
+            <li><a href="donate.html">Donate</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="#"></a></li>
+        </ul>
+        <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+        </nav>
+        
+        <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const navLinks = document.getElementById('nav-links');
+        
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+        </script>
+
+    
+
+<section class="networking-details">
     <!-- Header -->
-    <header>
-        <h1>Networking Events</h1>
-        <p>Meet and connect with industry leaders, tech enthusiasts, and professionals at our exclusive events.</p>
+    <header class="bg-green-500 text-white text-center py-20">
+        <h1 class="text-4xl font-bold animate-fade-in">Upcoming Networking Events</h1>
+        <p class="mt-2 text-lg animate-fade-in">Stay up to date with our upcoming events where you can meet like-minded individuals and industry professionals.</p>
     </header>
 
-    <!-- Networking Events Details Section -->
-    <section class="networking-details">
-        <h2>Upcoming Networking Events</h2>
-        <p>Stay up to date with our upcoming events where you can meet like-minded individuals and industry professionals.</p>
+    <!-- Events Container -->
+    <div class="container mx-auto px-6 py-12">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Event 1 -->
+            <div class="event-card animate-slide-up">
+                <h3 class="text-2xl font-bold">TechTalk 2025</h3>
+                <p><strong>Date:</strong> January, 2025</p>
+                <p><strong>Location:</strong> Tekeleza Hub, Nairobi</p>
+                <p class="text-gray-600">Join us for an evening of insightful talks and discussions on the latest in AI and cybersecurity.</p>
+            </div>
 
-        <!-- List of Upcoming Events -->
-        <div class="event">
-            <h3>TechTalk 2025</h3>
-            <p><strong>Date:</strong> January, 2025</p>
-            <p><strong>Location:</strong> Tekeleza Hub, Nairobi</p>
-            <p><strong>Description:</strong> Join us for an evening of insightful talks and discussions on the latest in AI and cybersecurity.</p>
-          <!--<a href="register.html" class="btn">Register Now</a>-->  
+            <!-- Event 2 -->
+            <div class="event-card animate-slide-up delay-100">
+                <h3 class="text-2xl font-bold">Hackathon Meetup</h3>
+                <p><strong>Date:</strong> February, 2025</p>
+                <p><strong>Location:</strong> Tekeleza Hub, Nairobi</p>
+                <p class="text-gray-600">A collaborative event where developers, designers, and entrepreneurs come together to create innovative solutions.</p>
+            </div>
+
+            <!-- Event 3 -->
+            <div class="event-card animate-slide-up">
+                <h3 class="text-2xl font-bold">Women in Tech Summit</h3>
+                <p><strong>Date:</strong> March, 2025</p>
+                <p><strong>Location:</strong> Virtual Event</p>
+                <p class="text-gray-600">A virtual summit celebrating the contributions of women in the tech industry. Network with inspiring women leaders.</p>
+            </div>
+
+            <!-- Event 4 -->
+            <div class="event-card animate-slide-up delay-100">
+                <h3 class="text-2xl font-bold">Networking Mixer</h3>
+                <p><strong>Date:</strong> April, 2025</p>
+                <p><strong>Location:</strong> Tekeleza Hub, Nairobi</p>
+                <p class="text-gray-600">A relaxed networking session where you can meet potential collaborators and industry professionals over drinks and snacks.</p>
+            </div>
         </div>
-
-        <div class="event">
-            <h3>Hackathon Meetup</h3>
-            <p><strong>Date:</strong> February, 2025</p>
-            <p><strong>Location:</strong> Tekeleza Hub, Nairobi</p>
-            <p><strong>Description:</strong> A collaborative event where developers, designers, and entrepreneurs come together to create innovative solutions.</p>
-           <!--<a href="register.html" class="btn">Register Now</a>--> 
-        </div>
-
-        <div class="event">
-            <h3>Women in Tech Summit</h3>
-            <p><strong>Date:</strong> March, 2025</p>
-            <p><strong>Location:</strong> Virtual Event</p>
-            <p><strong>Description:</strong> A virtual summit celebrating the contributions of women in the tech industry. Network with inspiring women leaders.</p>
-         <!-- <a href="register.html" class="btn">Register Now</a>-->  
-        </div>
-
-        <div class="event">
-            <h3>Networking Mixer</h3>
-            <p><strong>Date:</strong> April, 2025</p>
-            <p><strong>Location:</strong> Tekeleza Hub, Nairobi</p>
-            <p><strong>Description:</strong> A relaxed networking session where you can meet potential collaborators and industry professionals over drinks and snacks.</p>
-          <!--  <a href="register.html" class="btn">Register Now</a>-->
-        </div>
-  
-        <h3>Join Our Networking Community</h3>
-        <p>If you want to stay informed about upcoming events and opportunities, join our newsletter or become a member of Tekeleza Hub.</p>
-        <a href="community.html" class="btn">Join Now</a>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2025 Tekeleza Hub. All Rights Reserved.</p>
-    </footer>
+    </div>
+</section>
+   
 </body>
 </html>

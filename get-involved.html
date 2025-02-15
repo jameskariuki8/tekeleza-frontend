@@ -6,6 +6,73 @@
     <title>Get Involved - Tekeleza Hub</title>
     <link rel="stylesheet" href="css/style.css"> <!-- Link to your CSS file -->
     <style>
+
+.navbar {
+            background-color:  #019D91;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 30px;
+            color: white;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 80px;
+            z-index: 1000;
+        }
+
+.logo img {
+    height: 80px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #ffdd57;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: #019D91;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        width: 150px;
+        text-align: left;
+        padding: 10px;
+    }
+    
+    .nav-links.active {
+        display: flex;
+    }
+    
+    .menu-toggle {
+        display: block;
+    }
+}
         /* Get Involved Page Styles */
         .get-involved {
             padding: 2rem 1rem;
@@ -60,6 +127,30 @@
         }</style>
 </head>
 <body>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="images/tekeleza-logo-removebg-preview.png" alt="Logo">
+        </div>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#about-us">About Us</a></li>
+            <li><a href="story.html">Our Story</a></li>
+            <li><a href="donate.html">Donate</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="#"></a></li>
+        </ul>
+        <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+        </nav>
+        
+        <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const navLinks = document.getElementById('nav-links');
+        
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+        </script>
+
     <!-- Header -->
     <header>
         <h1>Get Involved with Tekeleza Hub</h1>
@@ -102,13 +193,10 @@
         <div class="involvement-option">
             <h3>Join Our Community</h3>
             <p>Be part of a vibrant and inclusive tech community. Stay updated on events, workshops, and opportunities to collaborate.</p>
-            <a href="community.html" class="btn">Join the Community</a>
+            <a href="#" class="btn">Join the Community</a>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2025 Tekeleza Hub. All Rights Reserved.</p>
-    </footer>
+    
 </body>
 </html>

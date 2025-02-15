@@ -8,102 +8,134 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
        /* Mentorship Page Styles */
-.mentorship-details {
-    padding: 2rem 1rem;
-    background: #fff;
-    color: #333;
-    text-align: center;
+
+.navbar {
+            background-color:  #019D91;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 30px;
+            color: white;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 80px;
+            z-index: 1000;
+        }
+
+.logo img {
+    height: 80px;
 }
 
-.mentorship-details h2 {
-    font-size: 2.5rem;
-    color: #019d91; /* Tekeleza Red */
-    margin-bottom: 1rem;
+.nav-links {
+    list-style: none;
+    display: flex;
 }
 
-.mentorship-details p {
-    font-size: 1.2rem;
-    color: #666;
-    margin-bottom: 1.5rem;
+.nav-links li {
+    margin: 0 15px;
 }
 
-.mentorship-details h3 {
-    font-size: 1.8rem;
-    color: #000;
-    margin-top: 2rem;
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s;
 }
 
-.mentorship-details ul {
-    list-style-type: none;
-    padding: 0;
-    font-size: 1.1rem;
-    color: #555;
+.nav-links a:hover {
+    color: #ffdd57;
 }
 
-.mentorship-details ul li {
-    margin-bottom: 1rem;
+.menu-toggle {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
 }
-        
-        footer p {
-            font-size: 1rem;
-        }</style>
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: #019D91;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        width: 150px;
+        text-align: left;
+        padding: 10px;
+    }
+    
+    .nav-links.active {
+        display: flex;
+    }
+    
+    .menu-toggle {
+        display: block;
+    }
+}
+</style>
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <h1>Mentorship Programs</h1>
-        <p>Connecting you with experienced professionals in the tech industry to guide you on your journey.</p>
-    </header>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="images/tekeleza-logo-removebg-preview.png" alt="Logo">
+        </div>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#about-us">About Us</a></li>
+            <li><a href="story.html">Our Story</a></li>
+            <li><a href="donate.html">Donate</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="#"></a></li>
+        </ul>
+        <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+        </nav>
+        
+        <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const navLinks = document.getElementById('nav-links');
+        
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+        </script>
+
+         <!-- Header Section -->
+         <header class="bg-gradient-to-r from-teal-500 to-green-400 text-white text-center py-24">
+            <h1 class="text-3xl font-bold">Mentorship Programs</h1>
+            <p class="mt-2 text-base">Connecting you with experienced professionals in the tech industry to guide you on your journey.</p>
+        </header>
+        
 
     <!-- Mentorship Details Section -->
-    <section class="mentorship-details">
-        <h2>How Our Mentorship Works</h2>
-        <p>At Tekeleza Hub, we believe in the power of mentorship. Our programs connect tech enthusiasts with experienced industry professionals who provide valuable guidance, feedback, and resources to help you grow and succeed in your tech career.</p>
-        
-        <h3>Types of Mentorship</h3>
-        <ul>
-            <li><strong>One-on-One Mentorship:</strong> Personalized mentorship where you’ll work closely with a mentor.</li>
-            <li><strong>Group Mentorship:</strong> Interactive group sessions with multiple mentees and mentors.</li>
-            <li><strong>Short-Term Mentorship:</strong> A focused mentorship program that lasts for a few weeks.</li>
-            <li><strong>Long-Term Mentorship:</strong> A more comprehensive mentorship lasting several months, with in-depth guidance.</li>
+    <section class="max-w-4xl mx-auto mt-12 p-8 bg-white rounded-lg shadow-lg">
+        <h2 class="text-3xl font-semibold text-teal-600">How Our Mentorship Works</h2>
+        <p class="mt-4 text-lg leading-relaxed">
+            At <span class="font-bold">Tekeleza Hub</span>, we believe in the power of mentorship. Our programs connect tech enthusiasts with experienced industry professionals who provide valuable guidance, feedback, and resources to help you grow and succeed in your tech career.
+        </p>
+
+        <!-- Mentorship Types -->
+        <h3 class="mt-8 text-2xl font-semibold text-teal-500">Types of Mentorship</h3>
+        <ul class="mt-4 space-y-3">
+            <li class="flex items-start"><span class="text-green-500 text-xl mr-2">✔</span><strong>One-on-One Mentorship:</strong> Personalized mentorship where you’ll work closely with a mentor.</li>
+            <li class="flex items-start"><span class="text-green-500 text-xl mr-2">✔</span><strong>Group Mentorship:</strong> Interactive group sessions with multiple mentees and mentors.</li>
+            <li class="flex items-start"><span class="text-green-500 text-xl mr-2">✔</span><strong>Short-Term Mentorship:</strong> A focused mentorship program that lasts for a few weeks.</li>
+            <li class="flex items-start"><span class="text-green-500 text-xl mr-2">✔</span><strong>Long-Term Mentorship:</strong> A more comprehensive mentorship lasting several months, with in-depth guidance.</li>
         </ul>
 
-        <h3>Benefits of Joining the Mentorship Program</h3>
-        <ul>
-            <li>Access to industry professionals</li>
-            <li>Develop both technical and soft skills</li>
-            <li>Build a network with other aspiring tech leaders</li>
-            <li>Receive career guidance and job opportunities</li>
-            <li>Get hands-on advice for personal projects</li>
+        <!-- Benefits -->
+        <h3 class="mt-8 text-2xl font-semibold text-teal-500">Benefits of Joining the Mentorship Program</h3>
+        <ul class="mt-4 space-y-3">
+            <li class="flex items-start"><span class="text-green-500 text-xl mr-2">✔</span>Access to industry professionals</li>
+            <li class="flex items-start"><span class="text-green-500 text-xl mr-2">✔</span>Develop both technical and soft skills</li>
+            <li class="flex items-start"><span class="text-green-500 text-xl mr-2">✔</span>Build a network with other aspiring tech leaders</li>
+            <li class="flex items-start"><span class="text-green-500 text-xl mr-2">✔</span>Receive career guidance and job opportunities</li>
+            <li class="flex items-start"><span class="text-green-500 text-xl mr-2">✔</span>Get hands-on advice for personal projects</li>
         </ul>
-
-      <!--  <h3>Join Our Mentorship Program</h3>
-        <p>If you're interested in joining our mentorship program, fill out the form below and our team will get in touch with you soon.</p>
-
-        
-        <form action="submit-mentorship-form" method="POST" class="mentorship-form">
-            <label for="name">Your Name</label>
-            <input type="text" id="name" name="name" placeholder="Enter your name" required>
-
-            <label for="email">Your Email</label>
-            <input type="email" id="email" name="email" placeholder="Enter your email" required>
-
-            <label for="program">Select Program Type</label>
-            <select id="program" name="program">
-                <option value="one-on-one">One-on-One Mentorship</option>
-                <option value="group">Group Mentorship</option>
-                <option value="short-term">Short-Term Mentorship</option>
-                <option value="long-term">Long-Term Mentorship</option>
-            </select>
-
-            <button type="submit" class="btn">Apply Now</button>
-        </form>
     </section>
--->
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2025 Tekeleza Hub. All Rights Reserved.</p>
-    </footer>
+    
 </body>
 </html>
