@@ -2,40 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width,initial-scale=1" />
-	<link rel="icon" href="images/tekeleza-logo.jpg" type="image/x-icon" />
-	<title>Tekeleza Hub - Innovate, Empower & Transform</title>
-	
-	<meta name="description" content="Tekeleza Hub is a community-driven platform empowering youth with mentorship, skills, and resources to turn ideas into impactful innovations." />
-	<meta name="keywords" content="innovation, mentorship, youth empowerment, technology, startups, skill development, entrepreneurship, community projects" />
-	<meta name="author" content="Tekeleza Hub" />
-	<meta name="robots" content="index, follow" />
-	<meta name="locale" content="en" />
-	
-	<!-- Open Graph (For Facebook, LinkedIn, etc.) -->
-	<meta property="og:title" content="Tekeleza Hub - Innovate, Empower & Transform" />
-	<meta property="og:description" content="Join Tekeleza Hub and unlock your potential! We provide mentorship, resources, and opportunities to transform ideas into real-world solutions." />
-	<meta property="og:image" content="https://tekelezahub.org/images/tekeleza-logo.jpg" />
-	<meta property="og:image:width" content="1200" />
-	<meta property="og:image:height" content="630" />
-	<meta property="og:url" content="https://tekelezahub.org" />
-	<meta property="og:type" content="website" />
-	<meta property="og:site_name" content="Tekeleza Hub" />
-	
-	<!-- Twitter Card (For Twitter/X) -->
-	<meta name="twitter:card" content="summary_large_image" />
-	<meta name="twitter:title" content="Tekeleza Hub - Innovate, Empower & Transform" />
-	<meta name="twitter:description" content="Tekeleza connects aspiring innovators with mentors, skills, and funding opportunities to bring ideas to life." />
-	<meta name="twitter:image" content="https://tekelezahub.org/images/tekeleza-logo.jpg" />
-	<meta name="twitter:site" content="@tekelezahub" />
-	
-	<!-- Canonical URL -->
-	<link rel="canonical" href="https://tekelezahub.org" />
-	
-	<link rel="stylesheet" href="css/planet.css" />
-	<link rel="stylesheet" href="css/styles.css" />
-	<link rel="stylesheet" href="css/layout-6NRHWYMF.css" />
-<style>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="icon" href="images/tekeleza-logo.jpg" type="image/x-icon" />
+    <title>Tekeleza Hub</title>
+    <meta name="description" content="#" />
+    <meta name="locale" content="en" />
+    <meta property="og:locale" content="en_US" />
+    <link rel="stylesheet" href="css/planet.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/layout-6NRHWYMF.css" />
+    <style>
 
 html {
     scroll-behavior: smooth;
@@ -56,7 +32,7 @@ html {
     top: 0;
     left: 0;
     width: 100%;
-    height: 50px;
+    height: 80px;
     z-index: 1000;
 }
 
@@ -94,11 +70,10 @@ html {
 }
 
 @media (max-width: 768px) {
-	
     .nav-links {
         display: none;
         flex-direction: column;
-        background-color:#019D91;
+        background-color: #007BFF;
         position: absolute;
         top: 80px;
         right: 0;
@@ -107,7 +82,6 @@ html {
         padding: 10px;
         z-index: 2000;
         box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
-		
     }
     
     .nav-links.active {
@@ -121,59 +95,8 @@ html {
 
     .menu-toggle {
         display: block;
-		
-        right: 40px;  /* Move it to the right */
-        top: 15px;
-    }
-	
-}
-/* Default: Hide Dropdown */
-.dropdown-menu {
-    display: none;
-    position: absolute;
-    top: 60px;
-    right: 10px;
-    background-color: #019D91;
-    width: 180px;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
-    border-radius: 5px;
-    z-index: 2000;
-}
-
-/* Show Dropdown on Hover (Only for Small Screens) */
-@media (max-width: 768px) {
-    .menu-toggle:hover + .dropdown-menu,
-    .dropdown-menu:hover {
-        display: block;
     }
 }
-
-/* Hide Dropdown on Large Screens */
-@media (min-width: 769px) {
-    .dropdown-menu {
-        display: none !important;
-    }
-}
-
-/* Dropdown Menu Styling */
-.dropdown-menu li {
-    list-style: none;
-    padding: 10px;
-    border-bottom: 1px solid white;
-}
-
-.dropdown-menu li a {
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-    display: block;
-}
-
-.dropdown-menu li a:hover {
-    background-color: #ffdd57;
-    color: black;
-}
-
 
 </style>
 </head>
@@ -185,30 +108,22 @@ html {
         <ul class="nav-links" id="nav-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="index.html#about-us">About Us</a></li>
-			<li><a href="story.html">Our Story</a></li>
             <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="story.html">Our Story</a></li>
+			<li><a href="donate.html">Donate</a></li>
             <li><a href="#"></a></li>
         </ul>
         <div class="menu-toggle" id="menu-toggle">&#9776;</div>
-		<p></p>
-		<ul class="dropdown-menu">
-			<li><a href="index.html">Home</a></li>
-			<li><a href="index.html#about-us">About Us</a></li>
-			<li><a href="story.html">Our Story</a></li>
-			<li><a href="contact.html">Contact Us</a></li>
-		</ul>
-        
+        <li><a href="#"></a></li>
     </nav>
-	
     
 
 <script>
-
 const menuToggle = document.getElementById('menu-toggle');
-const dropdownMenu = document.querySelector('.dropdown-menu');
+const navLinks = document.getElementById('nav-links');
 
 menuToggle.addEventListener('click', () => {
-    dropdownMenu.style.display = dropdownMenu.style.display === "block" ? "none" : "block";
+    navLinks.classList.toggle('active');
 });
 
 </script>
@@ -273,7 +188,7 @@ menuToggle.addEventListener('click', () => {
 						<div class="c-idZwvW c-idZwvW-fGHEql-breakpoint-fluid c-idZwvW-ihWHSys-css" id="about-us">
 							<div class="c-idZwvW c-idZwvW-gukRhS-breakpoint-fixed c-idZwvW-ijEwhws-css">
 								<div class="c-eMYApQ c-eMYApQ-icHuRYJ-css">
-									<h2 class="c-kWnKGo c-kWnKGo-jYAlPz-variant-h2 c-kWnKGo-hyrOFA-heading-true c-kWnKGo-dpwOiK-bold-true c-kWnKGo-wtNYC-cv c-kWnKGo-ibPikli-css">TEKELEZA: Home for Innovetors</h2>
+									<h2 class="c-kWnKGo c-kWnKGo-jYAlPz-variant-h2 c-kWnKGo-hyrOFA-heading-true c-kWnKGo-dpwOiK-bold-true c-kWnKGo-wtNYC-cv c-kWnKGo-ibPikli-css">TEKELEZA: Home for Innovators</h2>
 								</div>
 								<div class="c-fGhUph c-fGhUph-ikIkPEf-css">
 									<div class="c-PJLV c-PJLV-ihsRHEG-css">
@@ -404,7 +319,7 @@ menuToggle.addEventListener('click', () => {
 												</div>
 												<div class="c-hUpsPh c-hUpsPh-ieFIudL-css">
 													<div class="c-hUpsPh c-hUpsPh-igAhvBc-css"></div>
-													<a href="story.html#skill sharing" target="_self" rel="noreferrer" title="skill sharing" class="c-cSIKJm c-cSIKJm-iirsfnf-css">
+													<a href="workshops.html" target="_self" rel="noreferrer" title="skill sharing" class="c-cSIKJm c-cSIKJm-iirsfnf-css">
 														<div class="c-hUpsPh c-hUpsPh-iecECPX-css">
 															<p class="c-kWnKGo c-kWnKGo-bGwBvc-variant-body1 c-kWnKGo-ifbEavx-css">Read More</p>
 															<svg width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -429,7 +344,7 @@ menuToggle.addEventListener('click', () => {
 												</div>
 												<div class="c-hUpsPh c-hUpsPh-ieFIudL-css">
 													<div class="c-hUpsPh c-hUpsPh-ikdMpkJ-css"></div>
-													<a href="story.html#mentorship" target="_self" rel="noreferrer" title="Learn more LottieFiles for Figma" class="c-cSIKJm c-cSIKJm-iirsfnf-css">
+													<a href="mentorship.html"  target="_self" rel="noreferrer" title="Learn more LottieFiles for Figma" class="c-cSIKJm c-cSIKJm-iirsfnf-css">
 														<div class="c-hUpsPh c-hUpsPh-iecECPX-css">
 															<p class="c-kWnKGo c-kWnKGo-bGwBvc-variant-body1 c-kWnKGo-ifbEavx-css">Read More</p>
 															<svg width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -453,7 +368,7 @@ menuToggle.addEventListener('click', () => {
 												</div>
 												<div class="c-hUpsPh c-hUpsPh-ieFIudL-css">
 													<div class="c-hUpsPh c-hUpsPh-iipYZtI-css"></div>
-													<a href="story.html#connecting innovators" target="_self" rel="noreferrer" title="Learn more LottieFiles for Canva" class="c-cSIKJm c-cSIKJm-iirsfnf-css">
+													<a href="events.html" target="_self" rel="noreferrer" title="Learn more LottieFiles for Canva" class="c-cSIKJm c-cSIKJm-iirsfnf-css">
 														<div class="c-hUpsPh c-hUpsPh-iecECPX-css">
 															<p class="c-kWnKGo c-kWnKGo-bGwBvc-variant-body1 c-kWnKGo-ifbEavx-css">Read More</p>
 															<svg width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -477,7 +392,7 @@ menuToggle.addEventListener('click', () => {
 												</div>
 												<div class="c-hUpsPh c-hUpsPh-ieFIudL-css">
 													<div class="c-hUpsPh c-hUpsPh-iipYZtI-css"></div>
-													<a href="#" target="_self" rel="noreferrer" title="Learn more LottieFiles for Canva" class="c-cSIKJm c-cSIKJm-iirsfnf-css">
+													<a href="projects.html" target="_self" rel="noreferrer" title="Learn more LottieFiles for Canva" class="c-cSIKJm c-cSIKJm-iirsfnf-css">
 														<div class="c-hUpsPh c-hUpsPh-iecECPX-css">
 															<p class="c-kWnKGo c-kWnKGo-bGwBvc-variant-body1 c-kWnKGo-ifbEavx-css">Read More</p>
 															<svg width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -840,7 +755,7 @@ menuToggle.addEventListener('click', () => {
 																<p class="c-kWnKGo c-kWnKGo-bGwBvc-variant-body1 c-kWnKGo-ihOBptO-css">Prof PK Muriungi</p>
 																<p class="c-kWnKGo c-kWnKGo-bGwBvc-variant-body1 c-kWnKGo-ihOBptO-css">Vice Chancellor Tharaka university</p>
 															</div>
-															<img src="images/m6.jpg" height="48" width="48" alt="PK Muriungi" loading="lazy" />
+															<img src="images/images.jpg" height="48" width="48" alt="PK Muriungi" loading="lazy" />
 														</div>
 													</div>
 												</div>
@@ -849,17 +764,17 @@ menuToggle.addEventListener('click', () => {
 										<div class="c-PJLV c-PJLV-iPJLV-css">
 											<div class="c-hUpsPh c-hUpsPh-ibHtAkb-css">
 												<div class="c-hUpsPh c-hUpsPh-ilhyanS-css">
-													<img src="images/tharaka.jpeg" alt="tharaka" width="128" height="70" loading="lazy" class="c-PJLV" />
+													<img src="images/download.jpg" alt="aws" width="128" height="70" loading="lazy" class="c-PJLV" />
 													<p class="c-kWnKGo c-kWnKGo-bGwBvc-variant-body1">
 														"Tekeleza Hub is a dynamic innovation ecosystem that nurtures talent, fosters mentorship, and drives technological advancements. It empowers innovators to turn ideas into solutions that create lasting societal and economic impact."
 													</p>
 													<div class="c-hUpsPh c-hUpsPh-ihhAPDA-css">
 														<div class="c-hUpsPh c-hUpsPh-icPPfON-css">
 															<div class="c-hUpsPh c-hUpsPh-ictfXTN-css">
-																<p class="c-kWnKGo c-kWnKGo-bGwBvc-variant-body1 c-kWnKGo-ihOBptO-css">Prof PK Muriungi</p>
-																<p class="c-kWnKGo c-kWnKGo-bGwBvc-variant-body1 c-kWnKGo-ihOBptO-css">Vice Chancellor Tharaka university</p>
+																<p class="c-kWnKGo c-kWnKGo-bGwBvc-variant-body1 c-kWnKGo-ihOBptO-css">Kevin Tuei</p>
+																<p class="c-kWnKGo c-kWnKGo-bGwBvc-variant-body1 c-kWnKGo-ihOBptO-css">Tech - Cloud Developer </p>
 															</div>
-															<img src="images/member4.jpg" height="48" width="48" alt="Barrett Johnson" loading="lazy" />
+															<img src="images/tuei.jpg" height="48" width="48" alt="Barrett Johnson" loading="lazy" />
 														</div>
 													</div>
 												</div>
@@ -869,15 +784,15 @@ menuToggle.addEventListener('click', () => {
 										<div class="c-PJLV c-PJLV-iPJLV-css">
 											<div class="c-hUpsPh c-hUpsPh-ibHtAkb-css">
 												<div class="c-hUpsPh c-hUpsPh-ilhyanS-css">
-													<img src="images/tharaka.jpeg" alt="tharaka" width="128" height="70" loading="lazy" class="c-PJLV" />
+													<img src="images/trinexia.jpg" alt="trinexia" width="128" height="70" loading="lazy" class="c-PJLV" />
 													<p class="c-kWnKGo c-kWnKGo-bGwBvc-variant-body1">""Tekeleza Hub is a transformative innovation center fostering creativity, mentorship, and collaboration. It empowers young innovators with resources and guidance to develop impactful technological solutions that address real-world challenges effectively.""</p>
 													<div class="c-hUpsPh c-hUpsPh-ihhAPDA-css">
 														<div class="c-hUpsPh c-hUpsPh-icPPfON-css">
 															<div class="c-hUpsPh c-hUpsPh-ictfXTN-css">
-																<p class="c-kWnKGo c-kWnKGo-bGwBvc-variant-body1 c-kWnKGo-ihOBptO-css">Prof PK Muriungi</p>
-																<p class="c-kWnKGo c-kWnKGo-bGwBvc-variant-body1 c-kWnKGo-ihOBptO-css">Vice Chancellor Tharaka university</p>
+																<p class="c-kWnKGo c-kWnKGo-bGwBvc-variant-body1 c-kWnKGo-ihOBptO-css">Mr Joseck Wekesa</p>
+																<p class="c-kWnKGo c-kWnKGo-bGwBvc-variant-body1 c-kWnKGo-ihOBptO-css">Partner Account Manager, East Africa at Trinexia Africa</p>
 															</div>
-															<img src="/images/m11.jpeg" height="48" width="48" alt="Saptarshi Prakash" loading="lazy" />
+															<img src="images/joseck.jpg" height="48" width="48" alt="Saptarshi Prakash" loading="lazy" />
 														</div>
 													</div>
 												</div>
