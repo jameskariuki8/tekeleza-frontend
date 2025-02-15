@@ -202,10 +202,7 @@ justify-content: center;
 p, div {
 font-family: 'Karla';
 }
-* {
-margin: 0;
-padding: 0;
-}
+
 user agent stylesheet
 div {
 display: block;

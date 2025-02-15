@@ -2,16 +2,40 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <link rel="icon" href="images/tekeleza-logo.jpg" type="image/x-icon" />
-    <title>Tekeleza Hub</title>
-    <meta name="description" content="#" />
-    <meta name="locale" content="en" />
-    <meta property="og:locale" content="en_US" />
-    <link rel="stylesheet" href="css/planet.css" />
-    <link rel="stylesheet" href="css/styles.css" />
-    <link rel="stylesheet" href="css/layout-6NRHWYMF.css" />
-    <style>
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+	<link rel="icon" href="images/tekeleza-logo.jpg" type="image/x-icon" />
+	<title>Tekeleza Hub - Innovate, Empower & Transform</title>
+	
+	<meta name="description" content="Tekeleza Hub is a community-driven platform empowering youth with mentorship, skills, and resources to turn ideas into impactful innovations." />
+	<meta name="keywords" content="innovation, mentorship, youth empowerment, technology, startups, skill development, entrepreneurship, community projects" />
+	<meta name="author" content="Tekeleza Hub" />
+	<meta name="robots" content="index, follow" />
+	<meta name="locale" content="en" />
+	
+	<!-- Open Graph (For Facebook, LinkedIn, etc.) -->
+	<meta property="og:title" content="Tekeleza Hub - Innovate, Empower & Transform" />
+	<meta property="og:description" content="Join Tekeleza Hub and unlock your potential! We provide mentorship, resources, and opportunities to transform ideas into real-world solutions." />
+	<meta property="og:image" content="https://tekelezahub.org/images/tekeleza-logo.jpg" />
+	<meta property="og:image:width" content="1200" />
+	<meta property="og:image:height" content="630" />
+	<meta property="og:url" content="https://tekelezahub.org" />
+	<meta property="og:type" content="website" />
+	<meta property="og:site_name" content="Tekeleza Hub" />
+	
+	<!-- Twitter Card (For Twitter/X) -->
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:title" content="Tekeleza Hub - Innovate, Empower & Transform" />
+	<meta name="twitter:description" content="Tekeleza connects aspiring innovators with mentors, skills, and funding opportunities to bring ideas to life." />
+	<meta name="twitter:image" content="https://tekelezahub.org/images/tekeleza-logo.jpg" />
+	<meta name="twitter:site" content="@tekelezahub" />
+	
+	<!-- Canonical URL -->
+	<link rel="canonical" href="https://tekelezahub.org" />
+	
+	<link rel="stylesheet" href="css/planet.css" />
+	<link rel="stylesheet" href="css/styles.css" />
+	<link rel="stylesheet" href="css/layout-6NRHWYMF.css" />
+<style>
 
 html {
     scroll-behavior: smooth;
@@ -32,7 +56,7 @@ html {
     top: 0;
     left: 0;
     width: 100%;
-    height: 80px;
+    height: 50px;
     z-index: 1000;
 }
 
@@ -70,10 +94,11 @@ html {
 }
 
 @media (max-width: 768px) {
+	
     .nav-links {
         display: none;
         flex-direction: column;
-        background-color: #007BFF;
+        background-color:#019D91;
         position: absolute;
         top: 80px;
         right: 0;
@@ -82,6 +107,7 @@ html {
         padding: 10px;
         z-index: 2000;
         box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+		
     }
     
     .nav-links.active {
@@ -95,8 +121,59 @@ html {
 
     .menu-toggle {
         display: block;
+		
+        right: 40px;  /* Move it to the right */
+        top: 15px;
+    }
+	
+}
+/* Default: Hide Dropdown */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    background-color: #019D91;
+    width: 180px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    z-index: 2000;
+}
+
+/* Show Dropdown on Hover (Only for Small Screens) */
+@media (max-width: 768px) {
+    .menu-toggle:hover + .dropdown-menu,
+    .dropdown-menu:hover {
+        display: block;
     }
 }
+
+/* Hide Dropdown on Large Screens */
+@media (min-width: 769px) {
+    .dropdown-menu {
+        display: none !important;
+    }
+}
+
+/* Dropdown Menu Styling */
+.dropdown-menu li {
+    list-style: none;
+    padding: 10px;
+    border-bottom: 1px solid white;
+}
+
+.dropdown-menu li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    display: block;
+}
+
+.dropdown-menu li a:hover {
+    background-color: #ffdd57;
+    color: black;
+}
+
 
 </style>
 </head>
@@ -108,21 +185,30 @@ html {
         <ul class="nav-links" id="nav-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="index.html#about-us">About Us</a></li>
+			<li><a href="story.html">Our Story</a></li>
             <li><a href="contact.html">Contact Us</a></li>
-            <li><a href="story.html">Our Story</a></li>
             <li><a href="#"></a></li>
         </ul>
         <div class="menu-toggle" id="menu-toggle">&#9776;</div>
-        <li><a href="#"></a></li>
+		<p></p>
+		<ul class="dropdown-menu">
+			<li><a href="index.html">Home</a></li>
+			<li><a href="index.html#about-us">About Us</a></li>
+			<li><a href="story.html">Our Story</a></li>
+			<li><a href="contact.html">Contact Us</a></li>
+		</ul>
+        
     </nav>
+	
     
 
 <script>
+
 const menuToggle = document.getElementById('menu-toggle');
-const navLinks = document.getElementById('nav-links');
+const dropdownMenu = document.querySelector('.dropdown-menu');
 
 menuToggle.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
+    dropdownMenu.style.display = dropdownMenu.style.display === "block" ? "none" : "block";
 });
 
 </script>
